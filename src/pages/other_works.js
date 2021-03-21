@@ -14,10 +14,10 @@ export default function other_works() {
    
         return (
             <Layout>
-              <Description>
+              {/* <Description>
             this is a description text.
-          </Description>
-              <Gallery path = {currentPath} />
+          </Description> */}
+              <Gallery path = {currentPath} isDescription ={false}/>
             </Layout>
         )
       } else {

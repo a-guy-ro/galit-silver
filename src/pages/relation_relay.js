@@ -13,10 +13,10 @@ export default function RelationRelay() {
     
       return (
           <Layout>
-            <Description>
+            {/* <Description>
           this is a description text.
-        </Description>
-            <Gallery path = {currentPath} />
+        </Description> */}
+            <Gallery path = {currentPath} isDescription = {false}/>
           </Layout>
       )
     } else {
