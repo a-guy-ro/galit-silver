@@ -1,23 +1,21 @@
-import React from "react"
+import React, {useEffect} from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { css } from "@emotion/react"
 import Footer from "../components/footer.js"
-import useWindowWidth from "./useWindowWidth.js"
-// import {useDimensions} from "@react-native"
-
-// const window = require('window');
 
 const divFooterStyle = {
   marginLeft: '60%', 
   marginRight:'5%',
   marginBottom:'0', 
   position: 'relative', 
-  zIndex: '15', 
-
+  zIndex: '15',
+  minHeight: `${typeof window !== 'undefined'  ? window.innerHeight*0.25 : 300}px` 
 }
 
-export default function Gallery ({path}) {
+
+
+export default function Gallery ({path, isDescription}) {
 const data = useStaticQuery(graphql`
   query Images {
     images: allFile(filter: {extension: {eq: "jpg"}}) {
@@ -31,34 +29,35 @@ const data = useStaticQuery(graphql`
     }
   }
   `)
-  const windowWidth = useWindowWidth;
+  const galleryContainerDivStyle = {
+    position: `absolute`,
+          // marginLeft: `5%`,
+          width: `${isDescription ? 70 : 95}%`,
+          display: `block`,
+          marginTop: `-${(Math.random()*1)+1}%`,
+          marginLeft:`${isDescription ? 20  : 5}%`,
+          marginRight:`${isDescription ? 10:0}%`,
+          zIndex: `-10`
+  }
 
   path = 'images/' + path;
   console.log(path);
+  const imageProps = []
   const displayImages = data.images.nodes.filter(image => image.relativeDirectory  ===  path && image);
   console.log(displayImages);
   displayImages.sort((a, b) => {return 0.5 - Math.random()});
   console.log(data);
-  const imageProps = []
+  
   displayImages.forEach(element => {
     imageProps.push({
         scale: Math.random()*0.3+0.9,
         zIndex: (Math.floor(Math.random()*3)+1)
     });
   });
-
-  
   
   
 return (
-      <div className = "gallery" style = {{
-          position: `absolute`,
-        // marginLeft: `5%`,
-        width: `${windowWidth}`,
-        display: `block`,
-        marginTop: `-${(Math.random()*1)+1}%`,
-        zIndex: `-10`
-      }}>
+      <div className = "gallery" style = {galleryContainerDivStyle}>
     {
       displayImages.map((image, index) => 
       <div key = {image.id} id = {image.id} css = {css`
@@ -88,4 +87,8 @@ return (
       </div>
    
 )
+}
+
+Gallery.defaultProps = {
+  isDescription: true,
 }

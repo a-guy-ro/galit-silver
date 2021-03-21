@@ -4,11 +4,13 @@ import { rhythm } from "../utils/typography"
 
 const pStyle = {
     marginTop: `${rhythm(3)}`,
-    fontSize: '16px',
-    position: 'fixed',
+    fontSize: '14px',
+    position: 'absolute',
     backgroundColor: 'black',
     color: 'white',
-    opacity: '0.75'
+    opacity: '0.75',
+    width:'25%',
+    zIndex: '0'
 }
 
 export default function ({children}) {

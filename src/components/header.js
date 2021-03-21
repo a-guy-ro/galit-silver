@@ -26,6 +26,7 @@ import ListLink from "./listlink.js"
       <ListLink textColur={textColour} to="/about/">about</ListLink>
       <ListLink textColur={textColour} to="/relation_relay/">relation/relay</ListLink>
       <ListLink textColur={textColour} to="/tfu_tfu/">tfutfu</ListLink>
+      <ListLink textColur={textColour} to="/drawings/">drawings</ListLink>
       <ListLink textColur={textColour} to="/other_works/">other works</ListLink>
       <ListLink textColur={textColour} to="/random_insta/">dice</ListLink>
     </ul>
