@@ -32,12 +32,18 @@ export default function FeatherCursor ({sizeOffset, children}) {
         id
         relativeDirectory
         childImageSharp {
-          gatsbyImageData(formats: [AUTO, WEBP, AVIF], placeholder: TRACED_SVG, layout: FULL_WIDTH, width: 100)
+          gatsbyImageData(
+            formats: [AUTO, WEBP, AVIF]
+            placeholder: TRACED_SVG
+            layout: FULL_WIDTH
+            width: 100
+          )
           original {
             width
             height
           }
         }
+        name
       }
     }
   }
@@ -45,12 +51,23 @@ export default function FeatherCursor ({sizeOffset, children}) {
 `  
   )
   const cursorGatsbyImage = useRef(null);
-  const middleIndex = 1;
-    const leftIndex = 3;
-    const rightIndex = 2;
-    const downIndex = 0;
-    let currentIndex = middleIndex;
+  let middleIndex, leftIndex, rightIndex, downIndex,currentIndex;
     const cursorImages = cursorImagesQuery.images.nodes.map(image => getImage(image));
+    cursorImagesQuery.images.nodes.map((image,index)=> {
+      switch(image.name) {
+        case 'straight':
+        middleIndex = index;
+        break;
+        case 'down':
+        downIndex = index;
+        break;
+        case 'turninLeft':
+        leftIndex = index;
+        break;
+        case 'turninRight':
+        rightIndex = index;
+      }
+    })
   const [imageIndex, setImageIndex] = useState (0);
   // const [currentImage, setCurrentImage] =useState (()=>cursorImages[imageIndex]);
   
