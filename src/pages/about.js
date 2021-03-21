@@ -6,8 +6,8 @@ import { rhythm } from "../utils/typography"
 export default function about() {
     return (
         <Layout sizeOffset = {4}>
-            <HomeVideo opacity = {0.75} />
-            <div style = {{width: '60%',marginLeft:'3%',marginRight:'10%', position: 'absolute', marginTop: `${rhythm(1.5)}`,backgroundColor:'black',opacity:'50%'}}>
+            <HomeVideo opacity = {0.95} />
+            <div style = {{width: '60%',marginLeft:'3%',marginRight:'10%', position: 'absolute', marginTop: `${rhythm(1.5)}`,backgroundColor:'black',opacity:'65%'}}>
       <p style={{width: '80%',marginLeft:'5%',marginRight:'10%', fontSize:'16px',color:'white'}}>
         <br/>
       Galit Silver silvergalit@gmail.com <br/>

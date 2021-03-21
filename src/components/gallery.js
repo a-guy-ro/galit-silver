@@ -32,10 +32,10 @@ const data = useStaticQuery(graphql`
   const galleryContainerDivStyle = {
     position: `absolute`,
           // marginLeft: `5%`,
-          width: `${isDescription ? 70 : 95}%`,
+          width: `${isDescription ? 70 : 100}%`,
           display: `block`,
           marginTop: `-${(Math.random()*1)+1}%`,
-          marginLeft:`${isDescription ? 20  : 5}%`,
+          marginLeft:`${isDescription ? 20  : 0}%`,
           marginRight:`${isDescription ? 10:0}%`,
           zIndex: `-10`
   }
@@ -50,7 +50,7 @@ const data = useStaticQuery(graphql`
   
   displayImages.forEach(element => {
     imageProps.push({
-        scale: Math.random()*0.3+0.9,
+        scale: Math.random()*0.2+0.9,
         zIndex: (Math.floor(Math.random()*3)+1)
     });
   });
