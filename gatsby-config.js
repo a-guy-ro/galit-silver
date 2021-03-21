@@ -1,21 +1,27 @@
 module.exports = {
   siteMetadata: {
-    title: "Galit  Silver's Website",
+    title: "Galit Silver",
   },
   plugins: [
     "gatsby-plugin-emotion",
     "gatsby-plugin-gatsby-cloud",
     "gatsby-plugin-image",
-    "gatsby-plugin-sitemap",
+    // "gatsby-plugin-sitemap",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
+    {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "images",
-        path: "./src/images/",
+        name: "resources",
+        path: "./src/resources/",
       },
-      __key: "images",
+      // __key: "images",
     },
   ],
 }
