@@ -9,9 +9,10 @@ vids.push(Vid1);
 vids.push(Vid2);
 vids.push(Vid3);
 vids.push(Vid4);
-vids.sort((a, b) => {return 0.5 - Math.random()});
+
 
 export default function HomeVideo ({opacity}) {
+vids.sort((a, b) => {return 0.5 - Math.random()});
 const [vidSelector, setVidsSelector] = useState (0);
 console.log(vidSelector);
 console.log(vids.length);

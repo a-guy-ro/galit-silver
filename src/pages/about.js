@@ -24,7 +24,8 @@ export default function about() {
         2018 - “Contemporary House (Second edition)” Group Exhibition, Co-Curator. Abandoned house-an artist run space, Tel-Aviv.<br/>
         2018 - “The Common Denominator” Group Exhibition,“Hayarkon 19” Gallery, Tel Aviv.<br/>
         2017 - “Contemporary House” Group Exhibition, Abandoned house-an artist run space, Tel-Aviv.<br/>
-        Residency2017 - Szczekociny art students residency, Poland<br/>
+        Residency <br/>
+        2017 - Szczekociny art students residency, Poland<br/>
         <br/>
         Education<br/>
         2014-2015 - “Parsons New-School” New York. Various courses.<br/>
