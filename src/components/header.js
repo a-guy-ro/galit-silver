@@ -2,6 +2,10 @@ import React from "react"
 import { useStaticQuery, Link, graphql } from "gatsby"
 import { rhythm } from "../utils/typography"
 import ListLink from "./listlink.js"
+import dice from "../resources/images/dice/download.png"
+import { GiPerspectiveDiceSixFacesRandom } from "react-icons/gi";
+
+
 
   export default function Header({textColour}) {
   const data = useStaticQuery(
@@ -28,7 +32,7 @@ import ListLink from "./listlink.js"
       <ListLink textColur={textColour} to="/tfu_tfu/">tfutfu</ListLink>
       <ListLink textColur={textColour} to="/drawings/">drawings</ListLink>
       <ListLink textColur={textColour} to="/other_works/">other works</ListLink>
-      <ListLink textColur={textColour} to="/random_insta/">dice</ListLink>
+      <ListLink textColur={textColour} to="/random_insta/"><GiPerspectiveDiceSixFacesRandom  size='1.2rem' style={{verticalAlign: 'middle' }}/></ListLink>
     </ul>
   </header>
   )

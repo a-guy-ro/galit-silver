@@ -13,10 +13,18 @@ export default function RelationRelay() {
     
       return (
           <Layout>
-            {/* <Description>
-          this is a description text.
-        </Description> */}
-            <Gallery path = {currentPath} isDescription = {false}/>
+            <Description>
+            <br/>
+            Relation-Relay \ 2020 <br/>
+            <br/>
+            Thick are the connections, firm are the separations <br/>
+            Between two-bodies.<br/>
+            A tension, created between the merging tothe forever disconnected<br/>
+            <br/>
+            Ceramics, Be’er Sheba clay, Porcelain, Raw silk, Upholstery fabric, stuffing material, Latex, Plaster, cast bronze, Remains of furniture.<br/>
+            Exhibited in “Hamidrasha” Academy of art, graduate exhibition of the 2020 class.<br/>
+        </Description>
+            <Gallery path = {currentPath}/>
           </Layout>
       )
     } else {

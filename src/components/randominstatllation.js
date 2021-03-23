@@ -77,25 +77,25 @@ export default function RandomInstallation () {
             originalImages.push(img);
       
           
-          console.log(originalImages.length);
+          // console.log(originalImages.length);
         }
         
         p.setup = () => {
           thisCanvas = p.createCanvas(p5Canvas.current.offsetWidth, p5Canvas.current.offsetHeight);
           const canvasElement  = document.querySelector('.p5Canvas');
-          console.log(canvasElement);
-          console.log(p5Canvas);
+          // console.log(canvasElement);
+          // console.log(p5Canvas);
 
-          console.log(thisCanvas);
+          // console.log(thisCanvas);
           stageGraphics  = p.createGraphics (thisCanvas.width, thisCanvas.height);
-          console.log(stageGraphics);
+          // console.log(stageGraphics);
           p.frameRate(fps);
           p.imageMode(p.CENTER);
           p.colorMode(p.HSB, 360, 100, 100, 255);
           bgColour = p.color(5);
           bgColour.setAlpha(opcty);
           let strokeColour = p.color(132, 70, 85, 255);
-          console.log(strokeColour);
+          // console.log(strokeColour);
           p.background(bgColour);
           p.stroke(strokeColour);
           matterSetup();
@@ -139,7 +139,7 @@ export default function RandomInstallation () {
         
         p.touchReleased = () =>{
             if (p5Canvas.current!==null) {
-                console.log(document.querySelector('.p5Canvas'));
+                // console.log(document.querySelector('.p5Canvas'));
                 if (imgsRatio !== null) {  
                 clickCount++;
                 anotherImage();
@@ -180,9 +180,9 @@ export default function RandomInstallation () {
             imgsRatio.push(currentRatio);
             originalImages[i].updatePixels();
           }
-          for (let i = 0; i < imgsRatio.length; i++) {
-            console.log('ratio for img no. ' + (i + 1) + ': ' + imgsRatio[i]);
-          }
+          // for (let i = 0; i < imgsRatio.length; i++) {
+          //   console.log('ratio for img no. ' + (i + 1) + ': ' + imgsRatio[i]);
+          // }
         }
         // p.windowResized = () => {
         //     if (p5Canvas.current) {

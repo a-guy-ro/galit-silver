@@ -35,7 +35,7 @@ const data = useStaticQuery(graphql`
           width: `${isDescription ? 70 : 100}%`,
           display: `block`,
           marginTop: `-${(Math.random()*1)+1}%`,
-          marginLeft:`${isDescription ? 20  : 0}%`,
+          marginLeft:`${isDescription ? 25  : 0}%`,
           marginRight:`${isDescription ? 10:0}%`,
           zIndex: `-10`
   }
