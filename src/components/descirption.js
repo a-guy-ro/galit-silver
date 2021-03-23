@@ -18,7 +18,7 @@ const pStyle = {
 
 export default function ({children}) {
     return (
-        <div style= {{width:'26%', backgroundColor:'black', opacity:'0.6',position:'absolute',marginTop: `${rhythm(3)}`,zIndex:'0'}}>
+        <div style= {{width:'26%', left:'0',backgroundColor:'black', opacity:'0.6',position:'absolute',marginTop: `${rhythm(3)}`,zIndex:'0'}}>
         <p style = {pStyle}>
             {children}
         </p>

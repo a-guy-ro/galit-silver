@@ -120,7 +120,7 @@ if (typeof window === 'undefined') {
           {cursorImages !==  null &&
       <div className = "cursor" style = {cursorStyle}>
           {cursorImages.map((image,index) => index === imageIndex &&
-          <GatsbyImage className = "cursorImage" key = {index} image = {image} alt = ""loading ='eager' ></GatsbyImage>
+          <GatsbyImage className = "cursorImage" key = {index} style={{border:'3px'}} image = {image} alt = ""loading ='eager' ></GatsbyImage>
           )}
        </div>
       }

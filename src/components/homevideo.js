@@ -1,8 +1,8 @@
 import React,  {useState,useEffect} from "react"
-import Vid1 from "../resources/videos/liquid_greens_test_39_twitter_720.mp4"
-import Vid2 from "../resources/videos/liquid_greens_test_40_twitter_720.mp4"
-import Vid3 from "../resources/videos/liquid_greens_test_41_twitter_720.mp4"
-import Vid4 from "../resources/videos/liquid_greens_test_42_twitter_720.mp4"
+import Vid1 from "../resources/videos/liquid_greens_test_39.mp4"
+import Vid2 from "../resources/videos/liquid_greens_test_40.mp4"
+import Vid3 from "../resources/videos/liquid_greens_test_41.mp4"
+import Vid4 from "../resources/videos/liquid_greens_test_42.mp4"
 import useWindowWidth from "./useWindowWidth.js"
 const  vids = [];
 vids.push(Vid1);
