@@ -6,7 +6,7 @@ module.exports = {
     "gatsby-plugin-emotion",
     "gatsby-plugin-gatsby-cloud",
     "gatsby-plugin-image",
-    // "gatsby-plugin-sitemap",
+    'gatsby-plugin-netlify-cache',
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {

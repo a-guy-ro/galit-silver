@@ -1,4 +1,4 @@
-import React,{useState, useEffect,useRef} from "react"
+import React,{useState, useEffect} from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
@@ -50,10 +50,9 @@ export default function FeatherCursor ({sizeOffset, children}) {
   
 `  
   )
-  const cursorGatsbyImage = useRef(null);
   let middleIndex, leftIndex, rightIndex, downIndex,currentIndex;
     const cursorImages = cursorImagesQuery.images.nodes.map(image => getImage(image));
-    cursorImagesQuery.images.nodes.map((image,index)=> {
+    cursorImagesQuery.images.nodes.forEach((image,index)=> {
       switch(image.name) {
         case 'straight':
         middleIndex = index;
@@ -120,7 +119,7 @@ if (typeof window === 'undefined') {
           {cursorImages !==  null &&
       <div className = "cursor" style = {cursorStyle}>
           {cursorImages.map((image,index) => index === imageIndex &&
-          <GatsbyImage className = "cursorImage" key = {index} style={{border:'3px'}} image = {image} alt = ""loading ='eager' ></GatsbyImage>
+          <GatsbyImage className = "cursorImage" key = {index} style={{border:'0'}} image = {image} alt = ""loading ='eager' ></GatsbyImage>
           )}
        </div>
       }

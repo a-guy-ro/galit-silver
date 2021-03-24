@@ -16,7 +16,7 @@ const pStyle = {
     marginRigjt:'5%'
 }
 
-export default function ({children}) {
+export default function Description ({children}) {
     return (
         <div style= {{width:'26%', left:'0',backgroundColor:'black', opacity:'0.6',position:'absolute',marginTop: `${rhythm(3)}`,zIndex:'0'}}>
         <p style = {pStyle}>

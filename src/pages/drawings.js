@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import Gallery from "../components/gallery"
-import Description from "../components/descirption.js"
+// import Description from "../components/descirption.js"
 
 
 

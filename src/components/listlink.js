@@ -1,10 +1,7 @@
 import React from "react"
 import { css } from "@emotion/react"
 import {Link} from "gatsby"
-const liStyle = {
-    display: 'inline-block',
-    marginRight: '1rem'
-}
+
 export  default function ListLink ({to,  children, textColour}) {
     return (
         <li css= {css` 

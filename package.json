@@ -10,18 +10,20 @@
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",
-    "build": "gatsby build",
+    "build": "cross-env GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
   "dependencies": {
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.1.5",
+    "cross-env": "^7.0.3",
     "gatsby": "^3.1.1",
     "gatsby-cli": "^3.1.0",
     "gatsby-plugin-emotion": "^6.1.0",
     "gatsby-plugin-gatsby-cloud": "^2.1.0",
     "gatsby-plugin-image": "^1.1.1",
+    "gatsby-plugin-netlify-cache": "^1.2.0",
     "gatsby-plugin-sharp": "^3.1.1",
     "gatsby-plugin-typography": "^3.1.0",
     "gatsby-remark-images": "^4.1.0",

@@ -1,4 +1,4 @@
-import React, {useEffect} from "react"
+import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { css } from "@emotion/react"
@@ -24,7 +24,16 @@ const data = useStaticQuery(graphql`
         relativeDirectory
         relativePath
         childImageSharp {
-          gatsbyImageData(formats: [AUTO, WEBP, AVIF], placeholder: BLURRED, layout: CONSTRAINED, width: 400)
+          gatsbyImageData(
+            formats: [AUTO, WEBP, AVIF], 
+            placeholder: BLURRED, 
+            layout: CONSTRAINED, 
+            width: 600
+            )
+            original {
+              width
+              height
+            }
         }
       }
     }
@@ -33,11 +42,12 @@ const data = useStaticQuery(graphql`
   const galleryContainerDivStyle = {
     position: `absolute`,
           // marginLeft: `5%`,
-          width: `${isDescription ? 70 : 100}%`,
+          width: `${isDescription ? 78 : 100}%`,
           display: `block`,
           marginTop: `-${(Math.random()*1)+1}%`,
           marginLeft:`${isDescription ? 20  : 0}%`,
           marginRight:`${isDescription ? 10:0}%`,
+          // marginBottom: `${rhythm(0.5)}`,
           zIndex: `-10`
   }
 
@@ -52,8 +62,7 @@ const data = useStaticQuery(graphql`
   displayImages.forEach(image => {
     let currentTitle = '';
     let currentDesc = '';
-    imageCaptionJson.map(caption=> {
-      
+    imageCaptionJson.forEach(caption=> {
       let currentExhibtion = image.relativeDirectory.split("/")[1]
         let currentFile = image.relativePath.split("/")[2];
         if (caption.exhibition === currentExhibtion && caption["file name (case sensitive)"]  === currentFile) {
@@ -86,17 +95,21 @@ return (
     paddingBottom: ${Math.random()*5+1}rem;
     transform: scale(${imageProps[index].scale});
     z-index: ${imageProps[index].zIndex};
-    width: ${Math.random()*5+30}%;
+    width: ${image.childImageSharp.original.width > image.childImageSharp.original.height* 1.2 ? isDescription ? Math.random()*3+42 : Math.random()*5+35  : isDescription ? Math.random()*3+27 : Math.random()*3+25}%;
     &:hover{
       transform: scale(${imageProps[index].scale*1.275});
       opacity: 1;
       z-index: 11;
+      
+    }
+    &:hover p{
+      background-color: white;
     }
     `}>
     <GatsbyImage className = 'gatsby-image' key = {image.id} image = {getImage(image.childImageSharp) } alt= {imageProps[index].title} loading ="eager"/>
-    <div className='caption-image-wrapper' style={{position:'relative', textAlign:'center', width:'90%', height: '20%', top:'85%',bottom:'10%',left:'5%',right:'5%'}}>
+    <div className='caption-image-wrapper' style={{position:'relative', textAlign:'center', width:'90%', height: '20%', top:'85%',bottom:'0%',marginLeft:'5%',marginRight:'5%',zIndex:'4'}}>
     <p style={{color:'black',fontSize:'12px', textAlign:'inherit'}}>{imageProps[index].title}</p>
-    <p style={{color:'black', fontSize:'10px', textAlign:'inherit', marginTop:`${rhythm(-1)}`}}>{imageProps[index].description}</p>
+    <p style={{color:'black', fontSize:'10px', textAlign:'inherit', marginTop:`${rhythm(-1)}`,  marginBottom:'0'}}>{imageProps[index].description}</p>
 </div>
 
       </div>

@@ -67,8 +67,8 @@ export default function RandomInstallation () {
           originalImages.push(img);
           img = p.loadImage(img6, (img)=>loaded(img),(err)=>failedLoad(err));
           originalImages.push(img);
-        //   img = p.loadImage(img7, (img)=>loaded(img),(err)=>failedLoad(err));
-        //   originalImages.push(img);
+          // img = p.loadImage(img7, (img)=>loaded(img),(err)=>failedLoad(err));
+          // originalImages.push(img);
           img = p.loadImage(img8, (img)=>loaded(img),(err)=>failedLoad(err));
           originalImages.push(img);
           img = p.loadImage(img9, (img)=>loaded(img),(err)=>failedLoad(err));
@@ -232,9 +232,14 @@ const matterSetup = () => {
      useEffect(() =>{
          let isMouted = true;
          new P5 (Sketch,p5Canvas.current);
+         if (!isMouted) {
+          matterReset();
+          p5Canvas.current  = null;
+         }
          return ()=> {
              matterReset();
              p5Canvas.current  = null;
+             isMouted = false;
             //  console.log(p5Canvas);
          }
      },[])
@@ -243,8 +248,8 @@ const matterSetup = () => {
        return (<></>)
      } else {
      return (
-         <div  className="container" style= {{}}>
-         <div style  = {{height:'100%', minHeight:`${0.82*window.innerHeight}px`}} ref={p5Canvas}>
+         <div  className="container" style= {{width:'100%', height:'100%'}}>
+         <div style  = {{height:'100%',position:'relative', minHeight:`${0.75*window.innerHeight}px`}} ref={p5Canvas}>
              {/* {children} */}
          </div>
          </div>
