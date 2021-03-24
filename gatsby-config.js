@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: "Galit Silver",
+    url:"galitsilver.com"
   },
   plugins: [
     "gatsby-plugin-emotion",
