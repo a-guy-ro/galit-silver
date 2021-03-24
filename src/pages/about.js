@@ -29,7 +29,7 @@ export default function about() {
         <br />
         Education<br />
         2014-2015 - “Parsons New-School” New York. Various courses.<br />
-        2016-2020 - “HaMidrasha, Beit Berl” Fine Arts Degree with a Teachers Diploma. B.ed.F.A
+        2016-2020 - “HaMidrasha, Beit Berl” Fine Arts Degree with a Teachers Diploma. B.ed.F.A<br />
         <br />
         Awards and Grants<br />
         2020 - AICF Graduate Exhibition award <br />
