@@ -95,9 +95,9 @@ return (
     paddingBottom: ${Math.random()*5+1}rem;
     transform: scale(${imageProps[index].scale});
     z-index: ${imageProps[index].zIndex};
-    width: ${image.childImageSharp.original.width > image.childImageSharp.original.height* 1.2 ? isDescription ? Math.random()*3+42 : Math.random()*5+35  : isDescription ? Math.random()*3+27 : Math.random()*3+25}%;
+    width: ${image.childImageSharp.original.width > image.childImageSharp.original.height* 1.2 ? isDescription ? Math.random()*3+45 : Math.random()*5+35  : isDescription ? Math.random()*3+27 : Math.random()*3+25}%;
     &:hover{
-      transform: scale(${imageProps[index].scale*1.275});
+      transform: scale(${image.childImageSharp.original.width > image.childImageSharp.original.height* 1.2 ? (isDescription ? imageProps[index].scale*1.55 : imageProps[index].scale*1.35) : imageProps[index].scale*1.2});
       opacity: 1;
       z-index: 11;
       

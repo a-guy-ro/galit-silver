@@ -45,7 +45,9 @@ const videoSelector =  () =>{
     } 
     setCurrentVideo(vids[vidSelector]);
     videoPlayer.src = vids[vidSelector];
-    videoPlayer.type = 'video/mp4';
+    videoPlayer.type = "video/mp4";
+    videoPlayer.autoPlay = "true";
+    videoPlayer.preload = "true";
     console.log(`playng video - ${currentVideo}`);
 }
 
@@ -60,7 +62,7 @@ return ()=> {
 return (
     <div style = {vidStyle} >
         {vids !== null  &&
-    <video id='videoPlayer' className  =  'videoPlayer' width = "100%" height = "auto" style={{top:'0',bottom:'0'}} autoPlay autobuffer = 'true' muted > 
+    <video id='videoPlayer' className  =  'videoPlayer' width = "100%" height = "auto" style={{top:'0',bottom:'0'}} autoPlay preload = 'auto' muted > 
         <source src = {currentVideo} type = "video/mp4"/>
     your browser does not support this video.
     </video>
