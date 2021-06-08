@@ -1,11 +1,12 @@
 module.exports = {
   siteMetadata: {
     title: "Galit Silver",
-    description: "Website for the artist Galit Silver",
+    description: "Galit Silver's portfolio website - האתר של האמנית גלית סילבר",
     siteUrl:"https://galitsilver.com",
     instagramUserName: "@galit.amalia",
     email: "silvergalit@gmail.com",
-    keywords: "artist, sculpture, installation, Israel, Tel-Aviv",
+    keywords: "artist, sculpture, installation, Israel, Tel-Aviv, clay, felt wool, גלית סילבר, אמנית, אמנות, תל-אביב, ישראל, אמנות עכשווית",
+    siteMap: 'http://galitsilver.com/sitemap.xml',
   },
   plugins: [
     "gatsby-plugin-emotion",
@@ -33,15 +34,10 @@ module.exports = {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         host: "https://galitsilver.com",
-        policy: [{ userAgent: '*', allow: '/' }],
-        query: `{
-          site {
-            siteMetadata {
-              siteUrl
-            }
-          }
-        }`
+        sitemap: "https://galitsilver.com/sitemap.xml",
+        policy: [{ userAgent: '*', allow: '/' }]
       },
     },
+    "gatsby-plugin-sitemap",
   ],
 }
