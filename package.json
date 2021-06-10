@@ -10,7 +10,7 @@
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",
-    "build": "cross-env GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
+    "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
@@ -21,13 +21,13 @@
     "cross-env": "^7.0.3",
     "gatsby": "^3.1.1",
     "gatsby-cli": "^3.1.0",
+    "gatsby-plugin-advanced-sitemap": "^2.0.0",
     "gatsby-plugin-emotion": "^6.1.0",
     "gatsby-plugin-gatsby-cloud": "^2.1.0",
     "gatsby-plugin-image": "^1.1.1",
     "gatsby-plugin-netlify-cache": "^1.2.0",
     "gatsby-plugin-robots-txt": "^1.5.5",
     "gatsby-plugin-sharp": "^3.1.1",
-    "gatsby-plugin-sitemap": "^3.3.0",
     "gatsby-plugin-typography": "^3.1.0",
     "gatsby-remark-images": "^4.1.0",
     "gatsby-source-filesystem": "^3.1.0",

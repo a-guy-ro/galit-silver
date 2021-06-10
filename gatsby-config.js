@@ -15,7 +15,6 @@ module.exports = {
     'gatsby-plugin-netlify-cache',
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
-    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {
@@ -38,6 +37,6 @@ module.exports = {
         policy: [{ userAgent: '*', allow: '/' }]
       },
     },
-    "gatsby-plugin-sitemap",
+    "gatsby-plugin-advanced-sitemap",
   ],
 }
