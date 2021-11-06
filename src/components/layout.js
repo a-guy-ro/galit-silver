@@ -1,7 +1,7 @@
 import React from "react"
 import { css } from "@emotion/react"
 import { rhythm } from "../utils/typography"
-import Header from "../components/header.js"
+import Header from "../components/header-drupal.js"
 import FeatherCursor from "./feathercursor.js"
 import SEO from "./seo.js"
 

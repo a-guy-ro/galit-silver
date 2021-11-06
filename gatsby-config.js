@@ -7,6 +7,13 @@ module.exports = {
     email: "silvergalit@gmail.com",
     keywords: "artist, sculpture, installation, Israel, Tel-Aviv, clay, felt wool, גלית סילבר, אמנית, אמנות, תל-אביב, ישראל, אמנות עכשווית",
     siteMap: 'http://galitsilver.com/sitemap.xml',
+    menuItems: [
+      {
+        title: "Posts",
+        slug: "posts",
+        id: "post",
+      }
+    ]
   },
   plugins: [
     "gatsby-plugin-emotion",
@@ -36,6 +43,13 @@ module.exports = {
         sitemap: "https://galitsilver.com/sitemap.xml",
         policy: [{ userAgent: '*', allow: '/' }]
       },
+    },
+    {
+      resolve: "gatsby-source-drupal",
+      options: {
+        baseUrl: "https://live-galitsilver.pantheonsite.io/",
+      }
+
     },
     "gatsby-plugin-advanced-sitemap",
   ],
