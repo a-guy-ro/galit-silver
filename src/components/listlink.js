@@ -7,12 +7,13 @@ export  default function ListLink ({to,  children, textColour, scaled, isFirst})
         <li css= {css` 
         display: ${scaled?'block':'inline'};
     margin-left: 1rem;
-    margin-right: ${isFirst?'45%':'0'};
+    margin-right: ${(isFirst&&!scaled)?'45%':'0'};
     top:0;
     text-align:center;
     text-decoration: none; 
     color: ${textColour};
-    text-shadow: white 1px
+    text-shadow: white 1px;
+    font-size: ${scaled&&'12px'};
    `}>
       <Link to={to} style = {{
           color: `${textColour}`,

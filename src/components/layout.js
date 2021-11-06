@@ -7,7 +7,7 @@ import SEO from "./seo.js"
 
 
 
-export default function Layout({children, sizeOffset, textColour, isFeatherCursor}) {
+export default function Layout({children, sizeOffset, textColour, isFeatherCursor, isHome}) {
   
   return (
     <div>
@@ -22,7 +22,7 @@ export default function Layout({children, sizeOffset, textColour, isFeatherCurso
         padding-top: ${rhythm(1.5)};
       `}>
      
-    <Header textColour={textColour}/>
+    <Header textColour={textColour} isHome={isHome}/>
     {children}
      </div>
      </FeatherCursor>
@@ -43,4 +43,5 @@ export default function Layout({children, sizeOffset, textColour, isFeatherCurso
 
 Layout.defaultProps = {
   isFeatherCursor: true,
+  isHome: false,
 }
