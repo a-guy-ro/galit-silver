@@ -16,14 +16,16 @@ const divFooterStyle = {
 }
 
 export default function Gallery ({path, isDescription, images}) {
+  console.log(isDescription)
   const galleryContainerDivStyle = {
     position: `absolute`,
           // marginLeft: `5%`,
           width: `${isDescription ? 78 : 100}%`,
           display: `block`,
           marginTop: `-${(Math.random()*1)+1}%`,
-          marginLeft:`${isDescription ? 20  : 0}%`,
+          // marginLeft:`${isDescription ? 20  : 0}%`,
           marginRight:`${isDescription ? 10:0}%`,
+          left:`${!isDescription?'0':'20%'}`,
           // marginBottom: `${rhythm(0.5)}`,
           zIndex: `-10`
   }

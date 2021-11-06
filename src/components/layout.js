@@ -17,7 +17,7 @@ export default function Layout({children, sizeOffset, textColour, isFeatherCurso
     <div
       css={css`
         margin: 0 auto;
-        max-width: 100%;
+        width: 100%;
         padding: ${rhythm(2)};
         padding-top: ${rhythm(1.5)};
       `}>
