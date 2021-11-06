@@ -6,7 +6,9 @@ export default function RandomInstallationPage() {
     if (typeof window !== `undefined`) {
     return (             
     <Layout isFeatherCursor={false}>
+        <div style={{positin:'absolute', top:'10%'}}>
         <RandomInsallaion/> 
+        </div>
     </Layout>
                      
         

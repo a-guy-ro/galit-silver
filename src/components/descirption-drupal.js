@@ -21,11 +21,11 @@ const pStyle = {
     // right:'2.5%'
 }
 
-export default function Description ({children}) {
+export default function Description ({children, scaled}) {
     console.log(children);
     return (
         <>
-        {children!=disDesktopPlaceHolder && 
+        {((!scaled && children!=disDesktopPlaceHolder)||(scaled && children!=disMobilePlaceHolder)) && 
         <div style= {{width:'26%', left:'0',backgroundColor:'black', opacity:'0.6',position:'absolute',marginTop: `${rhythm(3)}`,zIndex:'0'}}>
         <div style = {pStyle}>
             {parse(children)}

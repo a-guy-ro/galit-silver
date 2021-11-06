@@ -4,8 +4,10 @@ import {graphql} from 'gatsby';
 import Layout from "../components/layout"
 import Gallery from "../components/gallery-drupal.js"
 import Description from "../components/descirption-drupal.js"
+import IsScaledDevice from '../components/isScaledDevice.js'
 
 const WorkPage = ({data}) => {
+    const scaledDevice = IsScaledDevice();
     const pageData = data.nodeWorksPage;
     const pageImages = data.nodeWorksPage.relationships.field_work_image;
     const pageImagesDesc = data.nodeWorksPage.field_work_image;
@@ -24,13 +26,13 @@ const WorkPage = ({data}) => {
 if (typeof document !== 'undefined') {
   let currentPath = document.location.pathname;
     currentPath =  currentPath.slice(1,currentPath.length-1);
-    console.log(images);
+    // console.log(images);
 
     
       return (
           <Layout>
-            <Description>
-                {pageData.body.processed}
+            <Description scaled = {scaledDevice}>
+                {scaledDevice ? pageData.body.summary : pageData.body.processed}
         </Description>
             <Gallery path = {currentPath} images = {images} isDescription = {pageData.body.processed ? true : false}/>
           </Layout>
@@ -55,6 +57,7 @@ export const query = graphql`
                 }
             body {
             processed
+            summary
         }
         relationships {
             field_work_image {

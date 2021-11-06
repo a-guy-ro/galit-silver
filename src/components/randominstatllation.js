@@ -248,7 +248,7 @@ const matterSetup = () => {
        return (<></>)
      } else {
      return (
-         <div  className="container" style= {{width:'100%', height:'100%'}}>
+         <div  className="container" style= {{position:'absolute', width:'100%', height:'88%', top:'12%', left:'0'}}>
          <div style  = {{height:'100%',position:'relative', minHeight:`${0.75*window.innerHeight}px`}} ref={p5Canvas}>
              {/* {children} */}
          </div>

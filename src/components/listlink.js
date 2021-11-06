@@ -2,11 +2,14 @@ import React from "react"
 import { css } from "@emotion/react"
 import {Link} from "gatsby"
 
-export  default function ListLink ({to,  children, textColour}) {
+export  default function ListLink ({to,  children, textColour, scaled, isFirst}) {
     return (
         <li css= {css` 
-    display:inline-block; 
-    margin-right: 1rem;
+        display: ${scaled?'block':'inline'};
+    margin-left: 1rem;
+    margin-right: ${isFirst?'45%':'0'};
+    top:0;
+    text-align:center;
     text-decoration: none; 
     color: ${textColour};
     text-shadow: white 1px
@@ -25,4 +28,5 @@ export  default function ListLink ({to,  children, textColour}) {
 
 ListLink.defaultProps = {
     textColour: "black",
+    isFirsst: false
   }
