@@ -3,7 +3,7 @@ import parse from 'html-react-parser'
 import { rhythm } from "../utils/typography"
 
 const disDesktopPlaceHolder = '<p>This is the description text as it will appear on desktop.</p>';
-const disMobilePlaceHolder = '';
+const disMobilePlaceHolder = 'This is the description text as it will appear on mobile.';
 const pStyle = {
     marginTop: `${rhythm(1)}`,
     marginBottom: `${rhythm(1)}`,
