@@ -16,7 +16,7 @@ export function stageDisplay(stageOffset,clickCount,exImagesLength,bgColour,p) {
   export function stageDraw(stageOffset,clickCount,exImagesLength, p) {
     let pace = 100;
     // console.log(p);
-    if (clickCount == 0) { //calculating segments' vectors in the first run
+    if (clickCount === 0) { //calculating segments' vectors in the first run
       stageCornersVecs(stageOffset,p);
       for (let i = 0; i < outerCorners.length; i++) {
         drawingVecsConstructor(outerCorners[i], innerCorners[i], pace);
@@ -59,7 +59,7 @@ export function stageDisplay(stageOffset,clickCount,exImagesLength,bgColour,p) {
   
   function drawingVecsConstructor(startVec, endVec, totalFrames) {
     let vecs = [];
-    let leng = startVec.copy().dist(endVec);
+    // let leng = startVec.copy().dist(endVec);
     let progRatio = 1 / totalFrames;
     for (let i = 0; i <= totalFrames; i++) {
       vecs.push(startVec.copy().lerp(endVec, progRatio * i));
@@ -86,7 +86,7 @@ export function stageDisplay(stageOffset,clickCount,exImagesLength,bgColour,p) {
     }
     p.line(vecs[i].x, vecs[i].y, vecs[i + 1].x, vecs[i + 1].y);
     if (i < vecs.length - 2) {
-      if (exImagesLength == 0) {
+      if (exImagesLength === 0) {
         requestAnimationFrame(() => segDraw(vecs, i + 1, pace, differentialStroke,exImagesLength,p));
       } else {
         segDraw(vecs, i + 1, pace, differentialStroke,exImagesLength,p);

@@ -7,7 +7,7 @@ import Footer from "./footer.js"
 // import imageCaptionJson from "../resources/images/caption_images.json"
 
 const divFooterStyle = {
-  marginLeft: '60%', 
+  marginLeft: '40%', 
   marginRight:'5%',
   marginBottom:'0', 
   position: 'relative', 

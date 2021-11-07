@@ -1,22 +1,8 @@
 import React from "react"
 import { css } from "@emotion/react"
 import { rhythm } from "../utils/typography"
+import isScaledDevice from "./isScaledDevice.js"
 
-const divStyle = {
-    position: "absolute",
-    left: "1%",
-    right: "1%",
-    bottom: "0",
-    textAlign: "center",
-    width: "100%",
-    color: "black",
-    fontSize: "12px",
-}
-const ulStyle = {
-    listStyle: `none`, 
-    marginTop: `0.5px`,
-    
-}
 
 const List = props => (
     <li css= {css` 
@@ -31,6 +17,25 @@ const List = props => (
   )
 
 export default function Footer() {
+    const scaled = isScaledDevice();
+const divStyle = {
+    position: "absolute",
+    display:'block',
+    left: `${scaled?'-9%':"1%"}`,
+    right: "1%",
+    bottom: "0",
+    textAlign: "center",
+    width: "98%",
+    color: "black",
+    fontSize: "12px",
+}
+const ulStyle = {
+    listStyle: `none`, 
+    marginTop: `0.5px`,
+    width: '100%',
+    left:'0'
+    
+}
     return (
         <div style = {divStyle}>
             <ul style={ulStyle}>

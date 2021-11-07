@@ -5,15 +5,16 @@ import {Link} from "gatsby"
 export  default function ListLink ({to,  children, textColour, scaled, isFirst}) {
     return (
         <li css= {css` 
-        display: ${scaled?'block':'inline'};
-    margin-left: 1rem;
-    margin-right: ${(isFirst&&!scaled)?'45%':'0'};
-    top:0;
-    text-align:center;
+        display: ${(!isFirst&&scaled)?'block':'inline'};
+    margin-left: ${!scaled&&'1rem'};
+    margin-top: ${(!isFirst&&scaled)&&'0.5rem'};
+    left: ${(isFirst&&scaled)&&'-10%'}
+    width:${isFirst&&'40%'};
     text-decoration: none; 
     color: ${textColour};
     text-shadow: white 1px;
     font-size: ${scaled&&'12px'};
+    
    `}>
       <Link to={to} style = {{
           color: `${textColour}`,

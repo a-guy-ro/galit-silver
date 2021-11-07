@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from "react"
-import { useStaticQuery, Link, graphql, StaticQuery } from "gatsby"
-import { rhythm } from "../utils/typography"
+import React, {useState} from "react"
+import { graphql, StaticQuery } from "gatsby"
+// import { rhythm } from "../utils/typography"
 import ListLink from "./listlink.js"
 import {GiPerspectiveDiceSixFacesRandom } from "react-icons/gi";
 import {MdMenu} from "react-icons/md";
@@ -39,23 +39,26 @@ import isScaledDevice from "./isScaledDevice.js";
     }
   `}
   render={data => (
-    <header style={{position: `relative`, width: '100%',left:'0',marginBottom:'2.5%'}}>
-    <button style = {{display: `${(scaledDevice&&!isHome)?'block':'none'}`, border:'none', backgroundColor:'transparent', cursor:'pointer', position:'absolute', left:'0',marginRight:'2.5%',top:'0'}} onClick = {()=>handleClick()}>
-      <MdMenu size='1.2em' style={{verticalAlign: 'middle', border:'none' }}/>
-    </button>
-    <span css={css`
-    display:${scaledDevice ? (isHome ||collapsedState) ? 'inline-block' : 'none' : 'block'};
-    width: ${(scaledDevice && isHome)?'40%':'100%'};
-    text-align:center;
-    `}>
-      <ul style={{ listStyle: `none`, float: `left`, marginLeft: `1rem`,left: '0', top:'0', width:'100%'}}>
-    <ListLink to="/" textColour={textColour} scaled={scaledDevice} isFirst = {true}>
+    <header style={{position: `relative`, display:'flex',width: '100%', height:'10%',left:`${scaledDevice?'-20%':'0'}`,marginBottom:'2.5%'}}>
+      <ul style={{ listStyle: `none`, float: `left`, marginLeft: `1rem`, width:'100%',top:'0', left:`${(scaledDevice&&isHome)&&'65%'}`, display:`${!scaledDevice?'inline-block':'inline'}`}}>
+    <ListLink to="/" textColour={textColour} scaled={scaledDevice} isFirst = {true} >
       <h3 style={{display:'inherit', fontSize:`${scaledDevice?'16px':'24px'}`}}>{data.site.siteMetadata.title}</h3>
     </ListLink>
+    <span css={css`
+    display:${scaledDevice ? (isHome ||collapsedState) ? 'inline-block' : 'none' : 'inline-block'};
+    width: ${(scaledDevice && isHome)?'100%':'100%'};
+    top:0;
+    `}>
+      <ul style={{ position:`${!scaledDevice?'absolute':'relative'}`,listStyle: `none`, float: `left`,right:`${!scaledDevice&&'0'}`,left: `${(!isHome&&scaledDevice)?'0':scaledDevice?'75%':'50%'}`, width:'50%', display:'inline-block', top: `${!scaledDevice&&'-5%'}`, textAlign:`${((isHome&&scaledDevice)||!scaledDevice)?'right':'left'}`}}>
       {data.site.childrenMenuItems.map(menuItem=> <ListLink key={menuItem.slug} scaled = {scaledDevice} textColour = {textColour} to ={menuItem.slug}>{menuItem.title}</ListLink>)}
     <ListLink scaled = {scaledDevice} textColur={textColour} to="/diy_installation/"><GiPerspectiveDiceSixFacesRandom  size='1.2em' style={{verticalAlign: 'middle' }}/></ListLink> 
     </ul>
     </span>
+    <button style = {{display: `${(scaledDevice&&!isHome)?'block':'none'}`, border:'none', backgroundColor:'transparent', cursor:'pointer', position:'absolute',left:'0',marginTop:'1%'}} onClick = {()=>handleClick()}>
+      <MdMenu size='1.2em' style={{verticalAlign: 'middle', border:'none' }}/>
+    </button>
+    
+    </ul>
 
     </header>
   )}

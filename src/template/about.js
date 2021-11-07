@@ -13,7 +13,7 @@ const aboutPage = ({data}) => {
     return (
         <Layout sizeOffset = {4}>
             <HomeVideo opacity = {0.9} />
-            <div style = {{width: '50%',marginLeft:'3%',marginRight:'10%', position: 'absolute', marginTop: `${rhythm(1.5)}`,backgroundColor:'black',opacity:'65%'}}>
+            <div style = {{width: `${scaled?'70%':'50%'}`,marginLeft:`${!scaled?'3%':'-5%'}`,marginRight:'10%', position: 'absolute', marginTop: `${rhythm(1.5)}`,backgroundColor:'black',opacity:'65%'}}>
       <div style={{width: '90%',marginLeft:'5%',marginRight:'5%', fontSize:`${scaled?'12px':'16px'}`,color:'white'}}>
         {parse(data.nodePage.body.processed)}
       </div>

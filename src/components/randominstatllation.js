@@ -21,6 +21,7 @@ const P5 = typeof window !== 'undefined' ? require ('p5') : null
 // fetch("./random_installation_comp/assets/tfuCeramics2.png").then(image=> img10 =image);
 export default function RandomInstallation () {
     const p5Canvas = useRef(null);
+    console.log(p5Canvas);
     const Engine = Matter.Engine;
     const World = Matter.World;
     const Render = Matter.Render;
@@ -36,7 +37,7 @@ export default function RandomInstallation () {
         let originalImages = [];
         let imgsRatio = [];
         let exhibitImages = [];
-        let indx = 0;
+        // let indx = 0;
         let bgColour;
         let opcty = 60;
         let fps = 60;
@@ -44,7 +45,7 @@ export default function RandomInstallation () {
         let xoffset = 0.0;
         let stageOffset = 0.2;
         // let imgBodies = [];
-        let thisCanvas, stageGraphics;
+        let thisCanvas,stageGraphics;
         // const relativePath = './src/components/random_installation_comp/assets'
         const loaded = (img)=>{
             console.log(`loaded image ${img}`);
@@ -198,6 +199,10 @@ const matterSetup = () => {
       enableSleeping: true,
       timing: {
         timeScale: 0.5
+      },
+      options: {
+        width: p5Canvas.current.offsetWidth,
+        height: p5Canvas.current.offsetHeight,
       }
     });
     world = engine.world;
@@ -248,7 +253,7 @@ const matterSetup = () => {
        return (<></>)
      } else {
      return (
-         <div  className="container" style= {{position:'absolute', width:'100%', height:'88%', top:'12%', left:'0'}}>
+         <div  className="container" style= {{position:'absolute', width:'100%', height:'88%', top:'18%', left:'0'}}>
          <div style  = {{height:'100%',position:'relative', minHeight:`${0.75*window.innerHeight}px`}} ref={p5Canvas}>
              {/* {children} */}
          </div>

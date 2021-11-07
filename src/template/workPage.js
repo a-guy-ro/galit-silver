@@ -31,7 +31,7 @@ if (typeof document !== 'undefined') {
     
       return (
           <Layout>
-            <Description scaled = {scaledDevice} isDescription = {(scaledDevice&&pageData.body.summary=='')&&false}>
+            <Description scaled = {scaledDevice} isDescription = {(scaledDevice&&pageData.body.summary==='')&&false}>
                 {scaledDevice ? pageData.body.summary : pageData.body.processed}
         </Description>
             <Gallery path = {currentPath} images = {images} isDescription = {pageData.body.processed ? true : false}/>
