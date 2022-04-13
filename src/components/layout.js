@@ -19,6 +19,7 @@ export default function Layout({children, sizeOffset, textColour, isFeatherCurso
         margin: 0 auto;
         width: 100%;
         padding: ${rhythm(2)};
+        padding-right: 0;
         padding-top: ${rhythm(1.5)};
       `}>
      
@@ -31,6 +32,7 @@ export default function Layout({children, sizeOffset, textColour, isFeatherCurso
       margin: 0 auto;
       max-width: 100%;
       padding: ${rhythm(2)};
+      padding-right: 0;
       padding-top: ${rhythm(1.5)};
     `}>
   

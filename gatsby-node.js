@@ -13,6 +13,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         title: String!,
         slug: String,
         id: String,
+        order: Int,
       }
     `);
 };
@@ -26,11 +27,13 @@ exports.onCreateNode = ({ node, actions, createNodeId, getNodesByType }) => {
         const siteMetadata = getNodesByType('Site');
         const {id,title} = node;
         const slug = node.path.alias;
+        const order = node.field_order;
         const type = node.internal.type === 'node__page' ? 'about' : 'workPage';
         const menuItem =  ({
             id: createNodeId(id),
             original_node_id: id,
             title: title,
+            order: order,
             slug: slug,
             type: type,
             template: type === 'workPage' ? templates.workPage : templates.about,
@@ -60,6 +63,7 @@ exports.createPages = async ({actions, graphql}) => {
             nodes {
               slug
               title
+              order
               original_node_id
               template
             }
@@ -71,6 +75,7 @@ exports.createPages = async ({actions, graphql}) => {
         createPage({
             path: page.slug,
             title: page.title,
+            order: page.order,
             component: page.template,
             context: {
                 id: page.original_node_id
