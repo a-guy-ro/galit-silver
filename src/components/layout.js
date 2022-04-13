@@ -3,12 +3,14 @@ import { css } from "@emotion/react"
 import { rhythm } from "../utils/typography"
 import Header from "../components/header-drupal.js"
 import FeatherCursor from "./feathercursor.js"
+import isScaledDevice from "./isScaledDevice.js";
 import SEO from "./seo.js"
 
 
 
 export default function Layout({children, sizeOffset, textColour, isFeatherCursor, isHome}) {
-  
+  const scaledDevice = isScaledDevice();
+
   return (
     <div>
       <SEO/>
@@ -19,7 +21,7 @@ export default function Layout({children, sizeOffset, textColour, isFeatherCurso
         margin: 0 auto;
         width: 100%;
         padding: ${rhythm(2)};
-        padding-right: 0;
+        padding-right: ${!scaledDevice&&'0'};
         padding-top: ${rhythm(1.5)};
       `}>
      
@@ -32,7 +34,7 @@ export default function Layout({children, sizeOffset, textColour, isFeatherCurso
       margin: 0 auto;
       max-width: 100%;
       padding: ${rhythm(2)};
-      padding-right: 0;
+      padding-right: ${!scaledDevice&&'0'};
       padding-top: ${rhythm(1.5)};
     `}>
   

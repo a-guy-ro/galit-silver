@@ -14,6 +14,8 @@ const IsScaledDevice = () => {
           setWidth(window.screen.availWidth);
           setheight(window.screen.availHeight);
           setIsScaled((width<500||height<700) ? true : false);
+          console.log(isScaled);
+
           
       }
       window.addEventListener('resize', handleResize)
