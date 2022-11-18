@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: "Galit Silver",
@@ -7,13 +11,13 @@ module.exports = {
     email: "silvergalit@gmail.com",
     keywords: "artist, sculpture, installation, Israel, Tel-Aviv, clay, felt wool, גלית סילבר, אמנית, אמנות, תל-אביב, ישראל, אמנות עכשווית",
     siteMap: 'http://galitsilver.com/sitemap.xml',
-    menuItems: [
-      {
-        title: "Posts",
-        slug: "posts",
-        id: "post",
-      }
-    ]
+    // menuItems: [
+    //   {
+    //     title: "Posts",
+    //     slug: "posts",
+    //     id: "post",
+    //   }
+    // ]
   },
   plugins: [
     "gatsby-plugin-emotion",
@@ -44,10 +48,15 @@ module.exports = {
         policy: [{ userAgent: '*', allow: '/' }]
       },
     },
-    {
+    {   
       resolve: "gatsby-source-drupal",
       options: {
         baseUrl: "https://live-galitsilver.pantheonsite.io/",
+        basicAuth: {
+          username: process.env.BASIC_AUTH_USERNAME,
+          password: process.env.BASIC_AUTH_PASSWORD,
+        },
+        fastBuilds: true,
       }
 
     },
