@@ -5,6 +5,8 @@ import Vid3 from "../resources/videos/home_video_3.mp4"
 import Vid4 from "../resources/videos/home_video_4.mp4"
 import useWindowWidth from "./useWindowWidth.js"
 import useWindowHeight from "./useWindowHeight.js"
+import isScaledDevice from "./isScaledDevice.js";
+
 
 const  vids = [];
 vids.push(Vid1);
@@ -19,6 +21,7 @@ const [vidSelector, setVidsSelector] = useState (0);
 const [currentVideo,  setCurrentVideo] = useState(vids[vidSelector]);
 const windowWidth = useWindowWidth;
 const windowHeight = useWindowHeight;
+const scaledDevice = isScaledDevice();
 
 const vidStyle = {
     position: 'fixed', 
@@ -62,7 +65,7 @@ return ()=> {
 return (
     <div style = {vidStyle} >
         {vids !== null  &&
-    <video id='videoPlayer' className  =  'videoPlayer' width = "100%" height = "auto" style={{top:'0',bottom:'0'}} autoPlay preload = 'auto' muted > 
+    <video id='videoPlayer' className  =  'videoPlayer' width = {scaledDevice?'auto':'100%'} height = {scaledDevice?'100%':'auto'} style={{top:'0',bottom:'0'}} autoPlay preload = 'auto' muted > 
         <source src = {currentVideo} type = "video/mp4"/>
     your browser does not support this video.
     </video>

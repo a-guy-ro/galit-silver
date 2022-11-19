@@ -6,8 +6,9 @@ import HomeVideo from "../components/homevideo.js"
 
 
 export default function Home() {
+
   return (
-    <Layout sizeOffset = {4}>
+    <Layout sizeOffset = {4} isHome = {true}>
       {/* <FeatherCursor  sizeOffset= {5}/> */}
       <HomeVideo/>
     <Footer/>
