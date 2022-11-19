@@ -5,7 +5,7 @@ const IsScaledDevice = () => {
     const isBrowser = typeof window !== 'undefined'
     const [width, setWidth] = useState(isBrowser ? window.screen.availWidth : 0);
     const [height, setheight] = useState(isBrowser ? window.screen.availHeight : 0);
-    const [isScaled,setIsScaled] = useState((width<500||height<700)?true:false   );
+    const [isScaled,setIsScaled] = useState((width<600||height<800)?true:false   );
     console.log(width,height);
     useEffect(() => {
       if (!isBrowser) return false
